@@ -19,4 +19,8 @@ export class MoedasServicesService {
     return this.http.get(this.baseURl+"/all/"+moeda);
   }
 
+  getVariacao(moeda):Observable<any>{
+    return this.http.get(this.baseURl+"/daily/"+moeda+"-BRL/15");
+  }
+
 }

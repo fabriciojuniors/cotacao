@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { MoedaDetalhesComponent } from '../moeda-detalhes/moeda-detalhes.component';
 import { MoedasServicesService } from '../service/moedas-services.service';
 
 @Component({
@@ -8,7 +10,8 @@ import { MoedasServicesService } from '../service/moedas-services.service';
 })
 export class Tab1Page implements OnInit{
   moeda : {};
-  constructor(private moedas : MoedasServicesService) {}
+  constructor(private moedas : MoedasServicesService,
+              private modalController : ModalController) {}
 
   async ngOnInit(){
      this.moedas.getAll()
@@ -58,7 +61,7 @@ export class Tab1Page implements OnInit{
 
       //Inicio - Gera cards
       let itemC = document.createElement("ion-item");
-      
+      itemC.onclick = () => this.openModal(moeda.code);
       itemC.innerHTML = icon + "<ion-label>"+moeda.name+"</ion-label>"+
                         "<ion-badge color='primary' slot='end'>"+moeda.code + " " + Number(moeda.high).toFixed(2)+"</ion-badge>";
       card.appendChild(itemC);
@@ -72,4 +75,16 @@ export class Tab1Page implements OnInit{
     
   }
 
+
+  async openModal(moeda){
+    const modal = await this.modalController.create({
+      component: MoedaDetalhesComponent,
+      cssClass: 'my-custom-class',
+      componentProps: {
+        'moeda': moeda
+      }
+    });
+
+    return await modal.present();
+  }
 }

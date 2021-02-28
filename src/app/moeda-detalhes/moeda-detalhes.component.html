@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="secondary" (click)="fechar()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      {{(this.moedaC[0].name) ? this.moedaC[0].name : "Erro"}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card style="border-left: 5px solid green;">
+    <ion-card-header>
+      <ion-card-title>{{this.moedaC[0].name}}</ion-card-title>
+      <ion-card-subtitle>{{this.moedaC[0].code}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-label>Valor de compra: {{this.moedaC[0].bid}}</ion-label> <br>
+      <ion-label>Valor de venda: {{this.moedaC[0].ask}}</ion-label><br>
+      <ion-label>Variação: {{this.moedaC[0].varBid}}</ion-label><br>
+    </ion-card-content>
+  </ion-card>
+
+
+  <canvas #barChart></canvas>
+</ion-content>
+
+<div class="rodape">
+  <ion-title>Developed by - Junior </ion-title>
+  <ion-subtitle>Fonte: https://docs.awesomeapi.com.br/</ion-subtitle>
+</div>
