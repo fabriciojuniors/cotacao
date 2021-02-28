@@ -7,22 +7,38 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="container">
-    <ion-label>Moeda original</ion-label>
-    <ion-item lines="none">
-      <ion-select id="moedaOriginal" #moedaOriginal (ionChange)="converter()" cancelText="Cancelar" placeholder="Selecione" >
-        <ion-select-option *ngFor="let m of this.moedas" value="{{m.valor}}">{{m.nome}}</ion-select-option>
-      </ion-select>
-      <ion-input (ionChange)="converter()" id="valorMoedaOriginal" #valorMoedaOriginal type="number" placeholder="Valor"></ion-input>
-    </ion-item>
+  <div class="div-card">
+    <ion-card style="border-left: 5px solid green;">
+      <ion-card-header>
+        <ion-card-title>Moeda Original</ion-card-title>
+      </ion-card-header>
+      <ion-item lines="none">
+        <ion-select id="moedaOriginal" #moedaOriginal (ionChange)="converter()" cancelText="Cancelar"
+          placeholder="Selecione">
+          <ion-select-option *ngFor="let m of this.moedas" value="{{m.valor}}">{{m.nome}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input (ionChange)="converter()" id="valorMoedaOriginal" #valorMoedaOriginal type="number"
+          placeholder="Valor"></ion-input>
+      </ion-item>
+    </ion-card>
 
-    <ion-label>Moeda convertida</ion-label>
-    <ion-item lines="none">
-      <ion-select id="moedaDestino" #moedaDestino (ionChange)="converter()" value="1" cancelText="Cancelar" placeholder="Selecione" >
-        <ion-select-option value="1">Real</ion-select-option>
-        <ion-select-option *ngFor="let m of this.moedas" value="{{m.valor}}">{{m.nome}}</ion-select-option>
-      </ion-select>
-      <ion-input (ionChange)="converter()" id="valorMoedaDestino" #valorMoedaDestino disabled type="number" placeholder="Valor"></ion-input>
-    </ion-item>
+    <ion-card style="border-left: 5px solid blue;">
+      <ion-card-header>
+        <ion-card-title>Moeda Convertida</ion-card-title>
+      </ion-card-header>
+      <ion-item lines="none">
+        <ion-select id="moedaDestino" #moedaDestino (ionChange)="converter()" value="1" cancelText="Cancelar"
+          placeholder="Selecione">
+          <ion-select-option value="1">Real</ion-select-option>
+          <ion-select-option *ngFor="let m of this.moedas" value="{{m.valor}}">{{m.nome}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input (ionChange)="converter()" id="valorMoedaDestino" #valorMoedaDestino disabled type="number"
+          placeholder="Valor"></ion-input>
+      </ion-item>
+    </ion-card>
   </div>
 </ion-content>

@@ -1,11 +1,11 @@
-.container {
-    text-align: center;
+.div-card {
+     text-align: center;
   
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    // position: absolute;
+    // left: 0;
+    // right: 0;
+    // top: 50%;
+    // transform: translateY(-50%);
 }
 
 .container ion-item{
@@ -13,4 +13,8 @@
 }
 .container ion-item ion-select{
     margin-right: 5%;
+}
+.rodape{
+    text-align: center;
+    color: white;
 }
