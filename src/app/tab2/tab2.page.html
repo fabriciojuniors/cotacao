@@ -1,17 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Conversão de Moedas
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="container">
+    <ion-label>Moeda original</ion-label>
+    <ion-item lines="none">
+      <ion-select id="moedaOriginal" #moedaOriginal (ionChange)="converter()" cancelText="Cancelar" placeholder="Selecione" >
+        <ion-select-option *ngFor="let m of this.moedas" value="{{m.valor}}">{{m.nome}}</ion-select-option>
+      </ion-select>
+      <ion-input (ionChange)="converter()" id="valorMoedaOriginal" #valorMoedaOriginal type="number" placeholder="Valor"></ion-input>
+    </ion-item>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-label>Moeda convertida</ion-label>
+    <ion-item lines="none">
+      <ion-select id="moedaDestino" #moedaDestino (ionChange)="converter()" value="1" cancelText="Cancelar" placeholder="Selecione" >
+        <ion-select-option value="1">Real</ion-select-option>
+        <ion-select-option *ngFor="let m of this.moedas" value="{{m.valor}}">{{m.nome}}</ion-select-option>
+      </ion-select>
+      <ion-input (ionChange)="converter()" id="valorMoedaDestino" #valorMoedaDestino disabled type="number" placeholder="Valor"></ion-input>
+    </ion-item>
+  </div>
 </ion-content>

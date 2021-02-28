@@ -15,7 +15,8 @@ export class MoedasServicesService {
     return this.http.get(this.baseURl+"/all");
   }
 
-  
-
+  getEspecifico(moeda):Observable<any>{
+    return this.http.get(this.baseURl+"/all/"+moeda);
+  }
 
 }
