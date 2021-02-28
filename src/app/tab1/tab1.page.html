@@ -1,17 +1,14 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content  [fullscreen]="true">
+  <ion-item>
+    <ion-label>Modo de exibição</ion-label>
+    <ion-select (ionChange)="alterarVisualizacao($event)" okText="Ok" cancelText="Cancelar" value="l" placeholder="Selecione a opção desejada">
+      <ion-select-option value="l">Lista</ion-select-option>
+      <ion-select-option selected value="s">Slide</ion-select-option>
+    </ion-select>
+  </ion-item>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-slides id="slides" class="hidden container" pager="false" [options]="slideOpts"></ion-slides>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card id="cards">
+  </ion-card>
 </ion-content>
