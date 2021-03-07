@@ -15,7 +15,7 @@ import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [AppComponent, LoginComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, MDBBootstrapModule, RouterModule, FormsModule],
+  imports: [BrowserModule, IonicModule.forRoot({swipeBackEnabled: false}), AppRoutingModule, HttpClientModule, MDBBootstrapModule, RouterModule, FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
