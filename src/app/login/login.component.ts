@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
         this.validaSessao(res);
       })
       .catch( err => {
-        this.error = err;
+        this.error = JSON.stringify(err);
       })
   }
 

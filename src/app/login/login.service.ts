@@ -21,7 +21,11 @@ export class LoginService {
   }
 
   authUser(dados):Observable<any>{
-    return this.http.post(this.urlBase+"auth.php", dados);
+    return this.http.post(this.urlBase+"auth.php", dados, {headers: {'Content-type': 'application/json'}});
+  }
+
+  insert(dados):Observable<any>{
+    return this.http.post(this.urlBase+"insert.php", dados);
   }
 
   setSessao(dados){

@@ -11,9 +11,10 @@ import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { NovoUsuarioComponent } from './novo-usuario/novo-usuario.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, NovoUsuarioComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot({swipeBackEnabled: false}), AppRoutingModule, HttpClientModule, MDBBootstrapModule, RouterModule, FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

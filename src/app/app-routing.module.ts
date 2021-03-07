@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { NovoUsuarioComponent } from './novo-usuario/novo-usuario.component';
 import { Tab1Page } from './tab1/tab1.page';
 import { TabsPageRoutingModule } from './tabs/tabs-routing.module';
 import { TabsPageModule } from './tabs/tabs.module';

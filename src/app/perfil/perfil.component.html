@@ -1,3 +1,18 @@
-<p>
-  perfil works!
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Meu perfil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-avatar slot="start">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <ion-label>
+      <h2>{{this.login.sessao.nome}}</h2>
+      <p>@{{this.login.sessao.login}}</p>
+    </ion-label>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-content>
+  <div class="container">
+    <img class="img-logo" src="https://img.icons8.com/fluent/240/000000/economic-improvement.png" />
+
+    <div class="alert-danger" style="margin-bottom: 2%;" *ngIf="sessaoInvalida">
+      {{mensagem}}
+    </div>
+    <div class="alert-danger" *ngIf="camposVazios">
+      {{vazio}}
+    </div>
+    <p>{{error}}</p>
+    <form #f="ngForm" (ngSubmit)="cadastrar(f)">
+      <ion-item class="item-input" lines="none">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-input ngModel placeholder="Nome" id="nome" name="nome" #nome="ngModel"></ion-input>
+      </ion-item>
+      <ion-item class="item-input" lines="none">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-input ngModel placeholder="Usuário" id="login" name="login" #login="ngModel"></ion-input>
+      </ion-item>
+      <ion-item class="item-input" lines="none">
+        <ion-icon name="key-outline"></ion-icon>
+        <ion-input placeholder="Senha" type="password" name="senha" ngModel #senha="ngModel"></ion-input>
+      </ion-item>
+      <ion-item class="item-input" lines="none">
+        <ion-icon name="key-outline"></ion-icon>
+        <ion-input placeholder="Confirmação de senha" type="password" name="senha2" ngModel #senha2="ngModel">
+        </ion-input>
+      </ion-item>
+      <ion-button class="btn" fill="clear" type="submit"><span *ngIf="!exibirLoader">Cadastrar</span>
+        <div *ngIf="exibirLoader" class="loader"></div>
+      </ion-button>
+    </form>
+  </div>
+</ion-content>
