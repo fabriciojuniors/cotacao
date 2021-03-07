@@ -35,3 +35,21 @@
   color: grey;
   margin-right: 2%;
 }
+.alert-danger{
+  line-height: 35px;
+  border-radius: 50px;
+}
+.loader {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #313333;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

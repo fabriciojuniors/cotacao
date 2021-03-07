@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from '../home/home.component';
+import { LoginComponent } from '../login/login.component';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
@@ -23,9 +25,21 @@ const routes: Routes = [
     ]
   },
   {
-    path: '',
+    path: 'inicio',
     redirectTo: '/tabs/tab1',
     pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: '',
+    redirectTo: '/home'
   }
 ];
 

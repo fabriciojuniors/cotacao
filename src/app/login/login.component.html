@@ -2,16 +2,20 @@
   <div class="container">
     <img class="img-logo" src="https://img.icons8.com/fluent/240/000000/economic-improvement.png"/>
 
-    <form>
+    <div class="alert-danger" *ngIf="sessaoInvalida">
+      <p>Usuário ou senha inválidos</p>
+    </div>
+
+    <form #f="ngForm" (ngSubmit)="entrar(f)">
       <ion-item class="item-input" lines="none">
         <ion-icon name="person-outline"></ion-icon>
-        <ion-input placeholder="Usuário" id="usuario" #usuario></ion-input>
+        <ion-input ngModel placeholder="Usuário" id="login" name="login" #login="ngModel" ></ion-input>
       </ion-item>
       <ion-item class="item-input" lines="none">
         <ion-icon name="key-outline"></ion-icon>
-        <ion-input placeholder="Senha" type="password" name="senha" #senha></ion-input>
+        <ion-input placeholder="Senha" type="password" name="senha" ngModel #senha="ngModel" ></ion-input>
       </ion-item>
-      <ion-button class="btn" fill="clear" (click)="entrar()">Entrar</ion-button>
+      <ion-button class="btn" fill="clear" type="submit"><span *ngIf="!exibirLoader">Entrar</span> <div *ngIf="exibirLoader" class="loader"></div></ion-button>
     </form>
   </div>
 </ion-content>

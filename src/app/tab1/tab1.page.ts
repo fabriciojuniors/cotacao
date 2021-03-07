@@ -63,7 +63,7 @@ export class Tab1Page implements OnInit{
       let itemC = document.createElement("ion-item");
       itemC.onclick = () => this.openModal(moeda.code);
       itemC.innerHTML = icon + "<ion-label>"+moeda.name+"</ion-label>"+
-                        "<ion-badge color='primary' slot='end'>"+moeda.code + " " + Number(moeda.high).toFixed(2)+"</ion-badge>";
+                        "<ion-badge color='success' slot='end'>"+moeda.code + " " + Number(moeda.high).toFixed(2)+"</ion-badge>";
       card.appendChild(itemC);
 
     } 
