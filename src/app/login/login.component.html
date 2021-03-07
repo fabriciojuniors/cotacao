@@ -1,19 +1,17 @@
 <ion-content>
   <div class="container">
-    <ion-title>Olá</ion-title>
-    <form>
-      <ion-item lines="none">
-        <ion-label>Usuário</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-label>Senha</ion-label>
-        <ion-input type="password"></ion-input>
-      </ion-item>
-      <ion-button>Entrar</ion-button>
-    </form>
-    <p>Esqueceu sua senha?</p>
+    <img class="img-logo" src="https://img.icons8.com/fluent/240/000000/economic-improvement.png"/>
 
-    <ion-button>Cadastra-se</ion-button>
+    <form>
+      <ion-item class="item-input" lines="none">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-input placeholder="Usuário" id="usuario" #usuario></ion-input>
+      </ion-item>
+      <ion-item class="item-input" lines="none">
+        <ion-icon name="key-outline"></ion-icon>
+        <ion-input placeholder="Senha" type="password" name="senha" #senha></ion-input>
+      </ion-item>
+      <ion-button class="btn" fill="clear" (click)="entrar()">Entrar</ion-button>
+    </form>
   </div>
 </ion-content>

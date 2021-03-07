@@ -1,0 +1,31 @@
+.container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+.img-logo{
+    width: 150px;
+    height: 150px;
+}
+
+.btn{
+    background-color: rgb(5, 165, 66);
+    width: 90%;
+    color: white;
+    border-radius: 50px;
+    margin: 50% 0 2% 0;
+    line-height: 30px;
+}
+.btn-2{
+    background-color: rgb(5, 165, 66);
+    width: 90%;
+    color: white;
+    border-radius: 50px;
+    margin: 5% 0 2% 0;
+    line-height: 30px;
+}
