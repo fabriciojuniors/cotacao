@@ -14,6 +14,7 @@ import { LoginService } from './login.service';
 export class LoginComponent implements OnInit {
   exibirLoader = false;
   sessaoInvalida = false;
+  error = '';
   constructor(private LoginService : LoginService,
               private router : Router) { }
 
@@ -27,13 +28,11 @@ export class LoginComponent implements OnInit {
         this.validaSessao(res);
       })
       .catch( err => {
-        console.log(err);
+        this.error = err;
       })
   }
 
   validaSessao(dados){
-    console.log(dados);
-    
     if(dados.mensagem){
       this.sessaoInvalida = true;
       return;
@@ -41,6 +40,7 @@ export class LoginComponent implements OnInit {
 
     if(dados.hash){
       this.LoginService.setSessao(dados);
+      this.sessaoInvalida = false;
       this.router.navigate(["/tabs"]);
     }
   }
