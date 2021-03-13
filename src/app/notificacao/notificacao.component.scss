@@ -1,0 +1,46 @@
+
+.container {
+    text-align: center;
+    top: 6%;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+.item-input{
+    border: 0.5px solid rgb(75, 74, 74);
+    border-radius: 50px;
+    margin-bottom: 5%;
+  }
+  
+  .item-input ion-icon{
+    width: 24px;
+    height: 24px;
+    color: grey;
+    margin-right: 2%;
+  }
+
+  .btn{
+    background-color: rgb(5, 165, 66);
+    width: 45%;
+    color: white;
+    border-radius: 50px;
+    line-height: 30px;
+    text-transform: unset;
+  }
+
+  .btn-cancelar{ background-color: red;}
+
+  .loader {
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #313333;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }

@@ -16,6 +16,7 @@ export class LoginService {
     login: null,
     id: null,
     nascimento: null,
+    email: null,
     hash: null,
     instante: null
   }
@@ -35,5 +36,6 @@ export class LoginService {
     this.sessao.instante = dados.instante;
     this.sessao.id = dados.id;
     this.sessao.hash = dados.hash;
+    this.sessao.email = dados.email;
   }
 }
