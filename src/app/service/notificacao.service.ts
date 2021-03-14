@@ -10,6 +10,6 @@ export class NotificacaoService {
   constructor(private http : HttpClient) { }
 
   insert(dados):Observable<any>{
-    return this.http.post("http://localhost/phpoo_teste/controllers/notificacao/insert.php", dados);
+    return this.http.post("https://appcotacao.herokuapp.com/controllers/notificacao/insert.php", dados);
   }
 }

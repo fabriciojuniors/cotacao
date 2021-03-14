@@ -48,7 +48,8 @@ export class NovoUsuarioComponent implements OnInit {
     let dados = {
       nome : f.value.nome,
       login : f.value.login,
-      senha : f.value.senha
+      senha : f.value.senha,
+      email: f.value.email
     };
     
     this.login.insert(dados).toPromise()

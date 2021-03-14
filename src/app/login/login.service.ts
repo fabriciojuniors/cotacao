@@ -9,7 +9,7 @@ export class LoginService {
 
   constructor(private http : HttpClient) { }
 
-  urlBase = "http://192.168.0.104/phpoo_teste/controllers/users/";
+  urlBase = "https://appcotacao.herokuapp.com/controllers/users/";
 
   sessao = {
     nome: null,
