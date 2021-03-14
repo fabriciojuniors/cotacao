@@ -30,6 +30,14 @@ export class PerfilComponent implements OnInit {
     return await modal.present();
   }
 
+  toggleThme(evento){
+    if(evento.detail.checked){
+      document.body.setAttribute("color-theme", "dark");
+    }else{
+      document.body.removeAttribute("color-theme");
+    }
+  }
+
 
 }
 
