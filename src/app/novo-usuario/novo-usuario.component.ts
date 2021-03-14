@@ -75,4 +75,20 @@ export class NovoUsuarioComponent implements OnInit {
     
   }
 
+  viewPass(){
+    if(document.querySelector("#senha").getAttribute("type")=="text"){
+      document.querySelector("#senha").setAttribute("type", "password");
+    }else{
+      document.querySelector("#senha").setAttribute("type", "text");
+    }
+  }
+
+  viewPass2(){
+    if(document.querySelector("#senha2").getAttribute("type")=="text"){
+      document.querySelector("#senha2").setAttribute("type", "password");
+    }else{
+      document.querySelector("#senha2").setAttribute("type", "text");
+    }
+  }
+
 }

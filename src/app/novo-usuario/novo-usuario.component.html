@@ -24,12 +24,13 @@
       </ion-item>
       <ion-item class="item-input" lines="none">
         <ion-icon name="key-outline"></ion-icon>
-        <ion-input placeholder="Senha" type="password" name="senha" ngModel #senha="ngModel"></ion-input>
+        <ion-input placeholder="Senha" type="password" name="senha" id="senha" ngModel #senha="ngModel"></ion-input>
+        <ion-icon name="eye-outline" (click)="viewPass()"></ion-icon>
       </ion-item>
       <ion-item class="item-input" lines="none">
         <ion-icon name="key-outline"></ion-icon>
-        <ion-input placeholder="Confirmação de senha" type="password" name="senha2" ngModel #senha2="ngModel">
-        </ion-input>
+        <ion-input placeholder="Confirmação de senha" type="password" name="senha2" id="senha2" ngModel #senha2="ngModel"></ion-input>
+        <ion-icon name="eye-outline" (click)="viewPass2()"></ion-icon>
       </ion-item>
       <ion-button class="btn" fill="clear" type="submit"><span *ngIf="!exibirLoader">Cadastrar</span>
         <div *ngIf="exibirLoader" class="loader"></div>

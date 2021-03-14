@@ -45,4 +45,12 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  viewPass(){
+    if(document.querySelector("#senha").getAttribute("type")=="text"){
+      document.querySelector("#senha").setAttribute("type", "password");
+    }else{
+      document.querySelector("#senha").setAttribute("type", "text");
+    }
+  }
+
 }
