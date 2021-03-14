@@ -6,16 +6,30 @@
   </ion-toolbar>
 </ion-header>
 <ion-content  [fullscreen]="true">
-  <ion-item>
-    <ion-label>Modo de exibição</ion-label>
-    <ion-select (ionChange)="alterarVisualizacao($event)" okText="Ok" cancelText="Cancelar" value="l" placeholder="Selecione a opção desejada">
-      <ion-select-option value="l">Lista</ion-select-option>
-      <ion-select-option selected value="s">Slide</ion-select-option>
-    </ion-select>
-  </ion-item>
-
-  <ion-slides id="slides" class="hidden container" pager="false" [options]="slideOpts"></ion-slides>
-
-  <ion-card id="cards">
-  </ion-card>
+  <!-- <ion-card id="cards">
+    <div *ngFor="let c of cotacao">
+      <ion-item (click)="openModal(c.moeda)">
+        <img src="../../assets/USD.png" width="48px" height="24px" alt="Bandeira {{c.moeda}}">
+        <ion-label style="margin-left: 5%;">{{c.nome}}</ion-label>
+        <ion-badge color="success" slot="end">{{c.moeda}} {{c.valorMaximo}}</ion-badge>
+      </ion-item>
+    </div>
+  </ion-card> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let c of cotacao" size="6">
+        <ion-card (click)="openModal(c.moeda)" style="border-left: 3px solid green;">
+          <img src="../../assets/{{c.moeda}}.png" height="100px" width="100%" alt="Bandeira {{c.moeda}}">
+          <ion-card-header>
+            <ion-card-title>{{c.nome}}</ion-card-title>
+            <ion-card-subtitle>{{c.moeda}}</ion-card-subtitle>
+          </ion-card-header>  
+          <ion-card-content>
+            Máximo: {{c.valorMaximo}}
+            Minima: {{c.valorMinimo}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
