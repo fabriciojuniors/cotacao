@@ -53,6 +53,8 @@ export class Tab2Page implements OnInit {
   preencherMoedas(data) {
     for (const m in data) {
       let moeda = data[m];
+      //console.log(moeda.name);
+      
       this.moedas.push({ nome: moeda.name, valor: moeda.high });
     }
   }
